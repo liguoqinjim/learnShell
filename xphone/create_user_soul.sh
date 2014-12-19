@@ -14,7 +14,7 @@ cat << EOF > $tmp_file
 		userid int unsigned not null,
 		soulid int unsigned not null,
 		skill_level int unsigned not null default 1,
-		whether char(1) not null default '0', 
+		whether_wear char(1) not null default '0', 
 		attach_attr binary(32) not null default 0x00000000,
 		primary key (userid,soulid)
 	)ENGINE=innodb CHARSET=UTF8;
@@ -29,5 +29,3 @@ while [ $table_index -lt 10 ] ; do
 	#"test" 是数据库的名字
 	#cat $tmp_file | mysql -u $root --password="$passwd" -h $host -P $port "test"
 	cat $tmp_file | mysql -u root -p$passwd -h $host -P $port "test"
-	table_index=`expr $table_index + 1`
-done
