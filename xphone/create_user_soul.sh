@@ -14,7 +14,7 @@ cat << EOF > $tmp_file
 		userid int unsigned not null,
 		soulid int unsigned not null,
 		skill_level int unsigned not null default 1,
-		whether_wear int not null default '0', 
+		whether_wear int unsigned not null defaule 0, 
 		attach_attr binary(32) not null default 0x00000000,
 		primary key (userid,soulid)
 	)ENGINE=innodb CHARSET=UTF8;
