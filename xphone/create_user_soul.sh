@@ -30,3 +30,4 @@ while [ $table_index -lt 10 ] ; do
 	#"test" 是数据库的名字
 	#cat $tmp_file | mysql -u $root --password="$passwd" -h $host -P $port "test"
 	cat $tmp_file | mysql -u root -p$passwd -h $host -P $port "user_1"
+done
