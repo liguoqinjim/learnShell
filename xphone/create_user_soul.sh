@@ -13,6 +13,7 @@ cat << EOF > $tmp_file
 	CREATE TABLE t_user_soul_$1(
 		userid int unsigned not null,
 		soulid int unsigned not null,
+		soul_level int unsigned not null default 1,
 		skill_level int unsigned not null default 1,
 		whether_wear int unsigned not null defaule 0, 
 		attach_attr binary(32) not null default 0x00000000,
@@ -28,4 +29,4 @@ while [ $table_index -lt 10 ] ; do
 	create_user_soul_table_sql $tbx
 	#"test" 是数据库的名字
 	#cat $tmp_file | mysql -u $root --password="$passwd" -h $host -P $port "test"
-	cat $tmp_file | mysql -u root -p$passwd -h $host -P $port "test"
+	cat $tmp_file | mysql -u root -p$passwd -h $host -P $port "user_1"
